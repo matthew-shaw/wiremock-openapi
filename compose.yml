@@ -4,3 +4,8 @@ services:
     ports:
       - "8080:8080"
     entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/__admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
