@@ -1,2 +1,1 @@
-# wiremock-openapi
-WireMock OpenAPI
+# WireMock OpenAPI
