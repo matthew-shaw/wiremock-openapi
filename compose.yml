@@ -1,0 +1,9 @@
+services:
+  wiremock:
+    image: "wiremock/wiremock:3.13.0-1-alpine"
+    container_name: wiremock
+    volumes:
+      - ./extensions:/var/wiremock/extensions
+      - ./__files:/home/wiremock/__files
+      - ./mappings:/home/wiremock/mappings
+    entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose"]
